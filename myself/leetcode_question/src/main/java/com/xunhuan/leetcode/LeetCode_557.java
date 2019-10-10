@@ -1,7 +1,5 @@
 package com.xunhuan.leetcode;
 
-import com.xunhuan.java.structure.stack.MyStack;
-
 import java.util.stream.Stream;
 
 /**

@@ -1,7 +1,5 @@
 package com.xunhuan.leetcode;
 
-import com.xunhuan.java.structure.stack.MyStack;
-
 /**
  * 翻转单词位置
  * @author tianhuan
