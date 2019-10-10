@@ -21,7 +21,7 @@ public class LeetCode_003 {
     public int lengthOfLongestSubstring(String s) {
 
         char[] chars = s.toCharArray();
-        Map<Character, Integer> map = new HashMap<>();
+        Map<Character, Integer> map = new HashMap<Character, Integer>();
         int i = 0;
         int j = 0;
         int result = 0;
