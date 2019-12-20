@@ -1,8 +1,7 @@
 package com.xunhuan.leetcode;
 
-import com.sun.xml.internal.ws.util.StringUtils;
-
-import java.util.Arrays;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * @author th
@@ -88,9 +87,32 @@ public class LeetCode_006 {
     }
 
 
+    public String convert2(String s, int numRows) {
+        List<StringBuilder> list = new ArrayList<>();
+        for (int i = 0; i < Math.min(numRows, s.length()); ++i) {
+            list.add(new StringBuilder());
+        }
+        boolean goDown = false;
+        int curRow = 0;
+        for (char c : s.toCharArray()) {
+            list.get(curRow).append(c);
+
+            if (curRow == 0 || curRow == numRows - 1) goDown = !goDown;
+
+            curRow += goDown ? 1 : -1;
+
+        }
+        StringBuilder resStr = new StringBuilder();
+        for (StringBuilder str : list) {
+            resStr.append(str);
+        }
+        return resStr.toString();
+    }
+
+
     public static void main(String[] args) {
         LeetCode_006 leetCode_006 = new LeetCode_006();
-        String paypalishiring = leetCode_006.convert("PAYPALISHIRING", 4);
+        String paypalishiring = leetCode_006.convert2("PAYPALISHIRING", 4);
         System.out.println(paypalishiring);
 
     }
